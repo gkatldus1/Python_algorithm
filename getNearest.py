@@ -15,7 +15,7 @@ def getNearestInternal(data, m) :
         return getNearestInternal(data[:mid+1], m)
 
 
-    return (0, 0)
+   
 
 
 
