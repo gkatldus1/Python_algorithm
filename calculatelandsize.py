@@ -21,9 +21,7 @@ def dfs(x, y, pMap, visited) :
             dfs(nx, ny, pMap, visited)
 
 def cadastralSurvey(pMap):
-    '''
-    디지털월드의 국토의 모양이 주어졌을 때, 섬의 갯수 (int) 와 각 섬의 크기들 (list)을 반환하세요.
-    '''
+    
     global isize
     
     num_island = 0
