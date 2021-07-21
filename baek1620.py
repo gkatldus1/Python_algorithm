@@ -3,15 +3,15 @@ import sys
 input = sys.stdin.readline
 
 _dict1, _dict2 = {}, {}
-N, M = map(int, input().split())
+N, M = map(int, input().rstrip().split())
 
 for i in range(N):
-    name = input()
+    name = input().rstrip()
     _dict1[name] = i + 1
     _dict2[i+1] = name
 
 for i in range(M):
-    target = input()
+    target = input().rstrip()
     if target.isdigit():
         print(_dict2[int(target)])
     else:

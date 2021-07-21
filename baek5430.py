@@ -23,10 +23,7 @@ def solution ():
     if flag == 0:
         print('['+ ','.join(arr) + ']')
     else:
-        print('[' + ','.join(arr[::-1])+ ']')
-
-
-
+        print('[' + ','.join(list(arr[::-1]))+ ']')
 
 
 for i in range(int(input())):
