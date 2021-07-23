@@ -11,8 +11,6 @@ def recur(n):
         return _list[n]
 
 
-
-
 for i in range(T) :
     n = int(input())
     ans = recur(n)
