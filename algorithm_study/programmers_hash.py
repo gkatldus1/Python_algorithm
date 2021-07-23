@@ -3,8 +3,8 @@ def solution(phone_book):
     answer = True
     dic = {}
     # dic = {i: j for i in range(len(phone_book)) for j in phone_book}
-    # 처음엔 위와 같이 딕셔너리를 만들어줬더니 시간 효율성을 통과 못해서 밑에처럼
-    #통과됨
+    # 처음엔 위와 같이 딕셔너리를 만들어줬더니 시간 효율성을 통과 못해서 밑에처럼 구현하니 통과
+    
     for pNumber in phone_book :
         dic[pNumber] = 1 #전화번호가 키 모든 value는 1
     for element in phone_book :
