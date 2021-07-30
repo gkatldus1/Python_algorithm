@@ -1,10 +1,10 @@
 import sys
 input = sys.stdin.readline
-w = [0] * 10000
+w = [0] * 10001
 n = int(input())
 for i in range(n):
     w[i+1] = int(input())
-dp = [0] * 10000
+dp = [0] * 10001
 dp[1] = w[1]
 if n > 1:
     dp[2] = w[1] + w[2]
