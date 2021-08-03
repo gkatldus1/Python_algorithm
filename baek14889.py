@@ -8,7 +8,7 @@ for case in permutations(index, 6):
     team_1 = []
     team_2 = []
     for idx, val in enumerate(case):
-        if val == 9:
+        if val == 0:
             team_1.append(idx)
         else:
             team_2.append(idx)
