@@ -19,8 +19,8 @@ for case in permutations(index, 6):
         for j in range(i+1, len(team_1)):
             point_1 += graph[team_1[i]][team_1[j]] + graph[team_1[j]][team_1[i]]
     for i in range(len(team_1)):
-            for j in range(i+1, len(team_1)):
-                point_2 += graph[team_2[i]][team_2[j]] + graph[team_2[j]][team_2[i]]
+        for j in range(i+1, len(team_1)):
+            point_2 += graph[team_2[i]][team_2[j]] + graph[team_2[j]][team_2[i]]
 
     answer = min(answer, abs(point_1-point_2))
 
