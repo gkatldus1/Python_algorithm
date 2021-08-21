@@ -9,6 +9,7 @@ for i in range(1, n):
     for j in range(i-1, -1, -1):
         if a[i] > a[j]:
             s.append(dp[j])
+
         if not s:
             dp[i] = a[i]
         else:
