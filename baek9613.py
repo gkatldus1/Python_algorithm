@@ -3,8 +3,6 @@ import sys
 
 input = sys.stdin.readline
 
-# result = list(combinations(arr, 2))
-
 
 def gcd(a, b):
     while b > 0:
