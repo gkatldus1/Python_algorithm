@@ -34,8 +34,8 @@ def Goldbach():
         if n == 0:
             break
 
-        A = 0
-        B = n
+        A = 3
+        B = n - 3
         for _ in range(1000000):
             if check[A] and check[B]:
                 print(f"{n} = {A} + {B}")
