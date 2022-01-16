@@ -60,8 +60,8 @@ for i in range(k):
         a, b = map(int, input().split())
         s[a].append(b)
         s[b].append(a)
-    for k in range(1, v+1):
-        if bi[k] == 0:
+    for l in range(1, v+1):
+        if bi[l] == 0:
             if not bfs(k):
                 isTrue = False
                 break
