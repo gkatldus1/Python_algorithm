@@ -1,14 +1,19 @@
 import collections
+import heapq
 
-k = int(input())
-nums = [1,1,1,2,2,3]
-freqs = collections.Counter(nums)
-ans = []
+def topKFrequent(self, nums: List[int], k: int) -> List[int]: 
+    freqs = collections.Counter(nums)
+    freqs_heap = []
 
-for elem in freqs:
-    if freqs[elem] >= k:
-        ans.append(elem)
+    for f in freqs:
+        heapq.heappush(freqs_heap, (-freqs[f], f))
 
-print(ans)
+    topk = list()
+    
+    for _ in range(k):
+        topk.append(heapq.heappop(freqs_heap)[1])
 
+    return topk
+
+# return list(zip(*collections.Counter(nums).most_common(k)))[0]
 
