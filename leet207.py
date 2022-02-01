@@ -5,7 +5,7 @@ def canFinish(self, numCourses: int, prerequisites: List[List[int]]) \
     graph = collections.defaultdict(list)
 
     for x, y in prerequisites:
-        graph[x].appene(y)
+        graph[x].append(y)
     
     traced = set()
     def dfs(i):
