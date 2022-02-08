@@ -6,7 +6,7 @@ class Codec:
         result = ["#"]
 
         while queue:
-            node= queue.popleft()
+            node = queue.popleft()
             if node:
                 queue.append(node.left)
                 queue.append(node.right)
