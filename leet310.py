@@ -4,6 +4,7 @@ def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
     if n <= 1:
         return [0]
     graph = collections.defaultdict(list)
+    
     for i, j in edges:
         graph[i].append(j)
         graph[j].append(i)
