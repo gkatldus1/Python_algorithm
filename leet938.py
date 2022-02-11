@@ -31,3 +31,17 @@ def rangeSumBST(self, root: TreeNode, L: int, R: int) -> int:
             if L <= node.val <= R:
                 sum += node.val
     return sum
+
+def rangeSumBST(self, root: TreeNode, L: int, R: int) -> int:
+    queue, sum = [root], 0
+
+    while queue:
+        node = queue.pop(0)
+        if node:
+            if node.val > L:
+                queue.append(node.left)
+            if node.val < R:
+                queue.append(node.right)
+            if L <= node.val <= R:
+                sum += node.val
+    return sum
