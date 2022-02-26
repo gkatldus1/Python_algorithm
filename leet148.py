@@ -7,7 +7,7 @@ def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
     return l1 or l2
 
 def sortList(self, head: ListNode) -> ListNode:
-    if not (head and head.next):
+    if not (head and head.next): # 쪼개서 하나의 노드만 남았을때 탈출
         return head
     
     half, slow, fast = None, head, head
@@ -19,4 +19,19 @@ def sortList(self, head: ListNode) -> ListNode:
     l2 = self.sortList(slow)
 
     return self.mergeTwoLists(l1, l2)
+
+def sortList(self, head: ListNode) -> ListNode:
+    #연결리스트 -> 파이썬 리스트
+    p = head
+    lst: List = []
+    while p:
+        lst.append(p.val)
+        p = p.next
     
+    lst.sort()
+
+    p = head
+    for i in range(len(lst)):
+        p.val = lst[i]
+        p = p.next
+    return head
