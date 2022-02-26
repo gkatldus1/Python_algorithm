@@ -1,10 +1,22 @@
 def bubblesort(A):
-    for i in range(1, len(A)):
-        for j in range(0, len(A) - 1):
+    for i in range(len(A)):
+        for j in range(0, len(A) - 1 - i):
             if A[j] > A[j + 1]:
                 A[j], A[j + 1] = A[j + 1], A[j]
     print(A)
-bubblesort([3,2,4,5,1,7,8,6])
 
-for i in range(1, len([3,2,4,5,1,7,8,6])):
-    print(i)
+def quicksort(A, lo, hi):
+    def partition(lo, hi):
+        pivot = A[hi]
+        left = lo
+        for right in range(lo, hi):
+            if A[right] < pivot:
+                A[left], A[right] = A[right], A[left]
+                left += 1
+        A[left],A[hi] = A[hi], A[left]
+        return left
+    
+    if lo < hi:
+        pivot = partition(lo, hi)
+        quicksort(A, lo, pivot - 1)
+        quicksort(A, pivot + 1, hi)
