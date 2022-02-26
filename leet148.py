@@ -19,3 +19,4 @@ def sortList(self, head: ListNode) -> ListNode:
     l2 = self.sortList(slow)
 
     return self.mergeTwoLists(l1, l2)
+    
