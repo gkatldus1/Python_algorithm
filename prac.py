@@ -1,5 +1,5 @@
 import sys
-from collections import Counter
+import collections
 
 # c = Counter(a=4, b=2, c=0, d=-2)
 # print(c)
@@ -19,15 +19,22 @@ from collections import Counter
 # # print(count)
 # print(count.most_common(1)[0][0])
 
-nums = [9,10,11,4,5,6,7,8]
-left, right = 0, len(nums) - 1
-while left < right:
-    mid = left + (right - left) // 2
+# nums = [9,10,11,4,5,6,7,8]
+# left, right = 0, len(nums) - 1
+# while left < right:
+#     mid = left + (right - left) // 2
 
-    if nums[mid] > nums[right]:
-        left = mid + 1
-    else:
-        right = mid
+#     if nums[mid] > nums[right]:
+#         left = mid + 1
+#     else:
+#         right = mid
 
-pivot = left
-print(nums[pivot])
+# pivot = left
+# print(nums[pivot])
+
+
+
+s = 5
+m = 2
+
+print(s%m)
