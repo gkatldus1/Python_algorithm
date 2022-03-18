@@ -16,7 +16,7 @@ def leastInterval(self, tasks: List[str], n: int) -> int:
 
         if not counter:
             break
-        
-        result += n - sub_count + 1
+
+        result += (n + 1) - sub_count 
 
     return result
