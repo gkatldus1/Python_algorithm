@@ -12,7 +12,7 @@ def solution(n: int, t: int, m: int, timetable: List[str]) -> str:
     for _ in range(n):
         for _ in range(m):
             if timetable and timetable[0] <= current:
-                candidate = timetable.pop[0] - 1
+                candidate = timetable.pop(0) - 1
             else:
                 candidate = current
         current += t
