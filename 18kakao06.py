@@ -5,7 +5,7 @@ def solution(m: int, n: int, board: List[str]) -> int:
 
     matched = True
     while matched:
-        mathched = []
+        matched = []
         for i in range(m - 1):
             for j in range(n - 1):
                 if board[i][j] == board[i][j + 1] == board[i + 1][j + 1] == board[i + 1][j] != '#':
@@ -14,7 +14,7 @@ def solution(m: int, n: int, board: List[str]) -> int:
         for i, j in matched:
             board[i][j] = board[i][j + 1] = board[i + 1][j + 1] = board[i + 1][j] = '#'
 
-        for _ in range(m):
+        for _ in range(m - 1):
             for i in range(m - 1):
                 for j in range(n):
                     if board[i + 1][j] == '#':

@@ -5,7 +5,8 @@ from typing import *
 def isPalindrome(self, s: str) -> bool:
     s = re.findall('[a-zA-Z0-9]', s.lower())
     s = "".join(s)
-    return(s == s[::-1])
+    
+    return s == s[::-1]
 
 def isPalindrome(self, s: str) -> bool:
     strs = []
