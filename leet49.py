@@ -6,4 +6,4 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 
     for word in strs:
         anagrams[''.join(sorted(word))].append(word)
-    return anagrams.values()
+    return list(anagrams.values())

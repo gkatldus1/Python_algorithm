@@ -1,5 +1,8 @@
 import sys
 import collections
+import re
+import pprint
+from zlib import Z_BEST_COMPRESSION
 
 # c = Counter(a=4, b=2, c=0, d=-2)
 # print(c)
@@ -32,9 +35,29 @@ import collections
 # pivot = left
 # print(nums[pivot])
 
-
-
-s = 5
-m = 2
-
-print(s%m)
+# str1s = [
+#         str1[i:i + 2].lower()
+#         for i in range(len(str1) - 1) if re.findall('[a-z]{2}', str1[i:i + 2].lower())
+#     ]
+str1 = "aa1+aa2"
+str1s = []
+# for i in range(len(str1) - 1):
+#     if re.findall('[a-z]{2}', str1[i:i + 2].lower()):
+#         str1s.append(str1[i:i + 2].lower())
+# print (str1s)
+# for i in range(len(str1) - 1):
+#     print(re.findall('[a-z]{2}', str1[i:i + 2].lower()))
+# ex = re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
+# nums = [1,3,4,6,4,3]
+# _dic = collections.defaultdict(int)
+# for i in range(10):
+#     _dic[i] = i
+# pprint.pprint(locals())
+nums = [(x, y, z) 
+    for x in range(5)
+    for y in range(5)
+    if x != y
+    for z in range(5)
+    if y != z
+]
+print(nums)

@@ -3,8 +3,7 @@ from typing import List
 def reorderLogFiles(self, logs: List[str]) -> List[str]:
     letters = []
     digits = []
-    for i in range(len(logs)):
-        log = logs[i]
+    for log in logs:
         if log.split()[1].isdigit():
             digits.append(log)
         else:
