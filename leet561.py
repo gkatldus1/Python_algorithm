@@ -1,4 +1,3 @@
-import itertools
 from typing import List
 
 def arrayPairSum(self, nums: List[int]) -> int:
