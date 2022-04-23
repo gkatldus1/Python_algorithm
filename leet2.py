@@ -1,5 +1,5 @@
 from typing import *
-
+import functools
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -22,7 +22,7 @@ class Solution:
             decimal += 1
             
         l1_num += l2_num
-        print(l1_num)
+    
         num_string = str(l1_num)
         
         prev: ListNode = None
@@ -68,7 +68,8 @@ class Solution:
         b = self.toList(self.reverseList(l2))
 
         resultStr = int(''.join(str(e) for e in a)) + int(''.join(str(e) for e in b))
-
+        # resultStr = int(''.join(map(str, a)) + int(''.join(map(str, b)))
+        resultStr = functools.reduce(lambda: x, y: 10*x + y, a, 0) + functools.reduce(lambda: x, y: 10*x + y, b, 0)
         return self.toReversedLinkedList(str(resultStr))
         
         
