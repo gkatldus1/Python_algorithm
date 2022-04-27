@@ -69,7 +69,7 @@ class Solution:
 
         resultStr = int(''.join(str(e) for e in a)) + int(''.join(str(e) for e in b))
         # resultStr = int(''.join(map(str, a)) + int(''.join(map(str, b)))
-        resultStr = functools.reduce(lambda: x, y: 10*x + y, a, 0) + functools.reduce(lambda: x, y: 10*x + y, b, 0)
+        resultStr = functools.reduce(lambda x, y: 10*x + y, a, 0) + functools.reduce(lambda x, y: 10*x + y, b, 0)
         return self.toReversedLinkedList(str(resultStr))
         
         
