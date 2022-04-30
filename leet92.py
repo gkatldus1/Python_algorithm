@@ -8,7 +8,7 @@ class ListNode:
 
 def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
     def reverseList(prev ,head: Optional[ListNode]) -> Optional[ListNode]:
-            tail = now = head
+            now = head
 
             for _ in range(right - (left-1)):
                 next, now.next = now.next, prev
