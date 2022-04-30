@@ -7,10 +7,10 @@ class ListNode:
 def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     if head is None:
             return None
-    odd_start = odd = head
+    odd = head
     even_start = even = head.next
 
-    while even and even.next :
+    while even and even.next:
         odd.next = odd.next.next
         odd = odd.next
 
@@ -18,7 +18,7 @@ def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         even = even.next
 
     odd.next = even_start
-    return odd_start
+    return head
 
 def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     def toList(self, node: ListNode) -> List:

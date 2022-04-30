@@ -4,10 +4,7 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
-
-
-
+        
 def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
     def reverseList(prev ,head: Optional[ListNode]) -> Optional[ListNode]:
         now = head
