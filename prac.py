@@ -60,4 +60,7 @@ nums = [(x, y, z)
     for z in range(5)
     if y != z
 ]
-print(nums)
+
+# for i in range(1 << 13):
+#     print(i)
+print(8&2)
