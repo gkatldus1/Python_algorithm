@@ -7,6 +7,8 @@ for i in range(T):
         _map.append(input())
 
     for r in range(N):
+        if flag == 1:
+            break
         for c in range(N - M + 1):
             if _map[r][c:c + M] == _map[r][c: c+M][::-1]: 
                 flag = 1
