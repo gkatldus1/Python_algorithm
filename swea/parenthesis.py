@@ -12,9 +12,8 @@ for i in range(T):
             stack.append(letter)
         elif letter == ')' or letter == '}':
             if stack:
-                if _dic[letter] == stack[-1]:
+                if _dic[letter] == stack.pop():
                     ans = 1
-                    stack.pop()
                 else:
                     ans= 0
                     break
