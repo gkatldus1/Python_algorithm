@@ -11,20 +11,20 @@ for tc in range(1,t+1):
                 print("#"+str(tc),'error')
                 break
         elif n.isdigit():
-            stack.append(n)   
+            stack.append(int(n))
         else:
             if len(stack)<2:
                 print("#"+str(tc),'error')
                 break
             else:
-                b = int(stack.pop())
-                a = int(stack.pop())
+                b = stack.pop()
+                a = stack.pop()
                 
                 if n=='+':
                     stack.append(a+b)
                 elif n=='-':
                     stack.append(a-b)
                 elif n=='/':
-                    stack.append(int(a//b))
+                    stack.append(a//b)
                 elif n=='*':
                     stack.append(a*b)
