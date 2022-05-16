@@ -18,14 +18,14 @@ def BFS(start_y, start_x):
                 visited.append((NewY,NewX))
                 Distance[NewY][NewX] = Distance[start_y][start_x] + 1
                 if Maze[NewY][NewX] == 3:
-                    D_result = Distance[NewY][NewX] - 1
-                    return
+                    return Distance[NewY][NewX] - 1
+    return 0
 
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     Maze = [list(map(int, input())) for _ in range(N)]
-    visited = [[0]*N for _ in range(N)]
+    visited = [[]*N for _ in range(N)]
 
     for y in range(N):
         for x in range(N):
@@ -35,11 +35,10 @@ for tc in range(1, T+1):
     dy = [1,-1,0,0]
     dx = [0,0,1,-1]
 
-    D_result = 0
     Q = deque([])
     Distance = [[0]*N for _ in range(N)]
-    BFS(start_y, start_x)
-    print(f'#{tc} {D_result}')
+    ans = BFS(start_y, start_x)
+    print(f'#{tc} {ans}')
 
 
 
