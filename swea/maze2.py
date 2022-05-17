@@ -4,7 +4,6 @@ def is_safe(y,x):
     return 0 <= y < N and 0 <= x < N and(Maze[y][x] == 0 or Maze[y][x] == 3)
 
 def BFS(start_y, start_x):
-    global D_result
     Q.append((start_y, start_x))
     visited.append((start_y, start_x))
 
