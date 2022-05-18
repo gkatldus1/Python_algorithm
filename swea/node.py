@@ -5,7 +5,6 @@ def iterative_bfs(start_v, find):
     visited[start_v] = 1
     while deq:
         v = deq.popleft()
-        
         for w in lst[v]:
             if visited[w] == 0:
                 visited[w] = 1
