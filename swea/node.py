@@ -2,19 +2,20 @@ from collections import deque
 
 def iterative_bfs(start_v, find):
     deq = deque([start_v])
-    
+    visited[start_v] = 1
     while deq:
         v = deq.popleft()
-        if visited[v] == 0:
-            visited[v] = 1
-            for w in lst[v]:
+        
+        for w in lst[v]:
+            if visited[w] == 0:
+                visited[w] = 1
                 if w == find:
                     dis[w] = dis[v] + 1 
                     return dis[w]
                 else:
                     deq.append(w)
                     dis[w] = dis[v] + 1 
-                
+                    
     return 0
 
 
