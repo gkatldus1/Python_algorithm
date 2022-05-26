@@ -1,6 +1,6 @@
 def heap_sort(node):
     pt_node = node // 2
-    if pt_node < 0:
+    if pt_node <= 0:
         return
     else:
         if tree[pt_node] > tree[node]:

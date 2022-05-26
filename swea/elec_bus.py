@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 T = int(input())
 for j in range(T):
-    K, N, M = list(map(int, input().split()))
+    K, N, M = map(int, input().split())
     charger = list(map(int, input().split()))
 
     current = count = 0

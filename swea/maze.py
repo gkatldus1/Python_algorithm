@@ -21,7 +21,7 @@ for tc in range(1, T+1):
     N = int(input())
     maze = []
     for i in range(N):
-        _input = list(map(int, list(input())))
+        _input = list(map(int, input()))
         
         for j in range(N):
             if _input[j] == 2:

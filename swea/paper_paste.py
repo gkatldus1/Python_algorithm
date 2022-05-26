@@ -7,4 +7,4 @@ for i in range(T):
     dp[2] = 3
     for k in range(3, N+1):
         dp[k] = dp[k-1] + dp[k-2] * 2
-    print("#{} {}".foramt(i+1, dp[N]))
+    print("#{} {}".format(i+1, dp[N]))

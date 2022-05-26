@@ -18,7 +18,7 @@ for i in range(T):
     P, A, B = map(int, input().split())
     A_count = bin_search(P, A)
     B_count = bin_search(P, B)
-    print(A_count, B_count)
+    
     if A_count < B_count:
         print("#{} A".format(i+1))
     elif A_count > B_count:

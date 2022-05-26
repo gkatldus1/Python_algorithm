@@ -4,13 +4,11 @@ for i in range(T):
     letters = input()
     stack = []
     for letter in letters:
-        if stack:
-            if stack[-1] == letter:
-                stack.pop()
-            else:
-                stack.append(letter)
+        if stack and stack[-1] == letter:
+            stack.pop()
         else:
             stack.append(letter)
+
     print("#{} {}".format(i+1, len(stack)))
 
 TC = int(input())

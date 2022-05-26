@@ -4,10 +4,12 @@ def iterative_bfs(start_v, lst, find):
     deq = deque([start_v])
     while deq:
         v = deq.popleft()
-        for w in lst[v]:
-            if w == find:
-                return 1
-            deq.append(w)
+        if visited[v] == 0:
+            for w in lst[v]:
+                if w == find:
+                    return 1
+                deq.append(w)
+            visited[v] = 1
     return 0
 
 T = int(input())
@@ -15,6 +17,7 @@ T = int(input())
 for i in range(T):
     V, E = map(int, input().split())
     lst = [[] for _ in range(V+1)]
+    visited = [0 for _ in range(V+1)]
     for j in range(E):
         a, b = map(int, input().split())
         lst[a].append(b)
