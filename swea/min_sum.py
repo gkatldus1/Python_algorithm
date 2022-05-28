@@ -11,10 +11,10 @@ def MyCalc(y):
 
     for x in range(N):
         if not visited[x]:
-            visited[x] = True
+            visited[x] = 1
             sub_result += lst[y][x]
             MyCalc(y+1)
-            visited[x] = False
+            visited[x] = 0
             sub_result -= lst[y][x]
 
 

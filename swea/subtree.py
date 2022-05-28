@@ -1,11 +1,11 @@
 
-def inorder(node):
+def preorder(node):
     global cnt
     if node == 0:
         return
     cnt += 1
-    inorder(left[node])
-    inorder(right[node])
+    preorder(left[node])
+    preorder(right[node])
     
 T = int(input())
 for tc in range(1, T+1):
@@ -20,5 +20,5 @@ for tc in range(1, T+1):
         else:
             left[parent] = child
     cnt = 0
-    inorder(N)
+    preorder(N)
     print("#{} {}".format(tc, cnt))

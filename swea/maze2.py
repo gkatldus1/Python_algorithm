@@ -24,7 +24,7 @@ T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     Maze = [list(map(int, input())) for _ in range(N)]
-    visited = [[]*N for _ in range(N)]
+    visited = []
 
     for y in range(N):
         for x in range(N):
