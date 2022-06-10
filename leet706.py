@@ -1,5 +1,4 @@
 import collections
-import keyword
 
 class ListNode:
     def __init__(self, key=None, value=None):
@@ -50,7 +49,7 @@ class MyHashMap:
             self.table[index] = ListNode() if p.next is None else p.next
             return
         
-        prev = None
+        prev, p = p, p.next
         while p:
             if p.key == key:
                 prev.next = p.next
