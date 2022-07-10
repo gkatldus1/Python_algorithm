@@ -10,7 +10,7 @@ for i in range(T):
         if flag == 1:
             break
         for c in range(N - M + 1):
-            if _map[r][c:c + M] == _map[r][c: c+M][::-1]: 
+            if _map[r][c:c + M] == _map[r][c:c + M][::-1]: 
                 flag = 1
                 print("#{} {}".format(i+1, _map[r][c:c+M]))
                 break
