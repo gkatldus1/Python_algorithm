@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Hw",
+      "request": "launch",
+      "mainClass": "Hw",
+      "projectName": "python-and-java-algorithm_6d36f173"
+    },
+    {
+      "type": "java",
+      "name": "Launch maze",
+      "request": "launch",
+      "mainClass": "maze",
+      "projectName": "python-and-java-algorithm_6d36f173"
+    },
+    {
+      "type": "java",
+      "name": "Launch robot",
+      "request": "launch",
+      "mainClass": "robot",
+      "projectName": "python-and-java-algorithm_6d36f173"
+    },
+    {
+      "type": "java",
       "name": "Launch baek11659",
       "request": "launch",
       "mainClass": "baek11659",
