@@ -6,10 +6,25 @@
   "configurations": [
     {
       "type": "java",
+
       "name": "Launch baek11660",
       "request": "launch",
       "mainClass": "baek11660",
       "projectName": "algorithm_810e0d6c"
+    },
+    {
+      "type": "java",
+      "name": "Launch maze",
+      "request": "launch",
+      "mainClass": "maze",
+      "projectName": "python-and-java-algorithm_6d36f173"
+    },
+    {
+      "type": "java",
+      "name": "Launch robot",
+      "request": "launch",
+      "mainClass": "robot",
+      "projectName": "python-and-java-algorithm_6d36f173"
     },
     {
       "type": "java",
