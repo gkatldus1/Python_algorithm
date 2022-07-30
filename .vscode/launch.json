@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch baek11660",
+      "request": "launch",
+      "mainClass": "baek11660",
+      "projectName": "algorithm_810e0d6c"
+    },
+    {
+      "type": "java",
       "name": "Launch baek11659",
       "request": "launch",
       "mainClass": "baek11659",

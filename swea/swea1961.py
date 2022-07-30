@@ -17,6 +17,7 @@ for tc in range(1, T + 1):
     a = []
     a.append(degree_90(arr, N))
     for x in range(N - 1):
+        print(a)
         a.append(degree_90(a[x], N))
 
     for i in range(N):
