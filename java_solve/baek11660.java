@@ -10,7 +10,7 @@ public class baek11660 {
         int M = Integer.parseInt(st.nextToken());   //M을 int로 변환
         int map[][] = new int[N + 1][N + 1];    //표를 받기 위한 배열 생성
         for (int i = 1; i <= N; i++) {
-            st = new StringTokenizer(br.readLine());    //값들을 한줄씩 입력 받음
+            st = new StringTokenizer(br.readLine());   
             for (int j = 1; j <= N; j++){
                 map[i][j] = Integer.parseInt(st.nextToken());   //입력받은 값을 int로 파싱 후 배열에 저장
             }
