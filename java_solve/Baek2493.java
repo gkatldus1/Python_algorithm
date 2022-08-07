@@ -28,6 +28,6 @@ public class Baek2493 {
             sb.append(ans[i]).append(" ");
         }
         System.out.println(sb.toString());
-        }
+    }
 }
 
