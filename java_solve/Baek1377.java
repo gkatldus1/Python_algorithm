@@ -26,7 +26,6 @@ class mData implements Comparable<mData>{
     int index;
 
     public mData(int value, int index){
-        // super();
         this.value = value;
         this.index = index;
     }

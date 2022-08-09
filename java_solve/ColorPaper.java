@@ -27,6 +27,7 @@ public class ColorPaper {
                 sum += boxes[i][j];
             }
         }
-        System.out.println(sum);
+        bw.write(sum);
+        bw.close();
     }
 }
