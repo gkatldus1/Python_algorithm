@@ -22,21 +22,21 @@ public class Baek1010 {
             east = Integer.parseInt(st.nextToken());
             
             
-            bridge(0, 0);
+            bridge(0);
             sb.append(count).append("\n");
             count = 0;
         }
         bw.write(sb.toString());
         bw.close();
     }
-    static void bridge(int start, int length){
+    static void bridge(int start){
         if(check == west){
             count++;
             return;
         }
         for(int i=start; i<east; i++){
             check++;
-            bridge(i+1, length+1);
+            bridge(i+1);
             check--;
         }
     }

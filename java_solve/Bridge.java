@@ -17,8 +17,6 @@ public class Bridge {
             st= new StringTokenizer(br.readLine());
             int west = Integer.parseInt(st.nextToken());
             int east = Integer.parseInt(st.nextToken());
-            
-            
             sb.append(combi(east, west)).append("\n");
         }
         bw.write(sb.toString());

@@ -21,12 +21,13 @@ public class swea1861 {
             
             map = new int[N][N];
             StringTokenizer st;
-           for(int i=0; i<N; i++){
+            for(int i=0; i<N; i++){
                 st = new StringTokenizer(br.readLine());
                 for(int j=0; j<N; j++){
                     map[i][j] = Integer.parseInt(st.nextToken());
                 }
             }
+
             int room = -1;  //가장 많은 카운트를 가진 룸을 저장할 변수
             int max = 0;    //움직인 최대값을 저장할 변수
             for(int i=0; i<N; i++){
@@ -38,7 +39,7 @@ public class swea1861 {
                         max = count;
                         room = tempRoom;
                     }else if(count == max){ //값이 같을땐 더 작은 방 번호를 저장해줌
-                        room = (room < tempRoom)? room :tempRoom;
+                        room = (room < tempRoom) ? room :tempRoom;
                     }
                 }
             }
@@ -49,15 +50,14 @@ public class swea1861 {
     }
 
     static void go(int i, int j){   //조건에 맞으면 재귀 함수를 호출하며 계속 이동
-      for(int k=0; k<4; k++){
-        int dx = i+dir_x[k];
-        int dy = j+dir_y[k];
-        if(dx>=0 && dx<N && dy>=0 && dy<N && map[dx][dy] - map[i][j] == 1){
-            count++;
-            go(dx,dy);
+        for(int k=0; k<4; k++){
+            int dx = i+dir_x[k];
+            int dy = j+dir_y[k];
+            if(dx>=0 && dx<N && dy>=0 && dy<N && map[dx][dy] - map[i][j] == 1){
+                count++;
+                go(dx,dy);
+            }
         }
-      }
-    
     }
 }
 
