@@ -18,11 +18,10 @@ public class Baek1987 {
         for(int i=0; i<R; i++){
             board[i] = br.readLine().toCharArray();
         }
-        String str = "";
-        move(0,0, str, 0);
+        move(0,0,0);
         System.out.println(max);
     }   
-    static void move(int r, int c, String str, int count){
+    static void move(int r, int c, int count){
         int idx = board[r][c] - 'A';
         selected[idx] = true;
         max = Math.max(count+1, max);
@@ -32,7 +31,7 @@ public class Baek1987 {
             if(dir_x>=0&&dir_x<R&&dir_y>=0&&dir_y<C){
                 idx = board[dir_x][dir_y]-'A';
                 if(!selected[idx]){
-                    move(dir_x, dir_y, str, count+1);
+                    move(dir_x, dir_y, count+1);
                     selected[idx] = false;
                 }
                 

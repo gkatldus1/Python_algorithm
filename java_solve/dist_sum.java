@@ -34,13 +34,10 @@ public class dist_sum {
             int y1 = Integer.parseInt(st.nextToken());
             int x2 = Integer.parseInt(st.nextToken());
             int y2= Integer.parseInt(st.nextToken());
-
             for(int j=x1; j<=x2; j++){
                 result += (sum[j][y2] - sum[j][y1-1]);
-
             }
             sb.append(result).append("\n");
-
         }
         System.out.println(sb);
     }

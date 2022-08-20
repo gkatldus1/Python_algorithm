@@ -13,8 +13,9 @@ public class Baek1931 {
         }
         @Override
         public int compareTo(meeting o) {
-            if(this.start==o.start) return this.end-o.end;
-            return this.start - o.start;
+            if(this.end==o.end) return this.start-o.start;
+            return this.end-o.end;
+            
         }
     }
     public static void main(String[] args) throws Exception {
@@ -26,30 +27,18 @@ public class Baek1931 {
             st = new StringTokenizer(br.readLine());
             arr[i] = new meeting(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
         }
-        int max=Integer.MIN_VALUE, temp=0;
         Arrays.sort(arr);
-
-        for(int i=0; i<arr.length; i++){
-            for(int j=i; j<arr.length; j++){
-                temp = 1;
-                int k=j+1;
-                int temp_j=j;
-                while(k<arr.length){
-                    if(arr[temp_j].start==arr[k].start){
-                        k++;
-                        continue;
-                    }
-                    if(arr[temp_j].end<=arr[k].start){
-                        temp+=1;
-                        temp_j = k;
-                        k++;
-                        continue;
-                    }
-                    k++;
-                }
-                max = Math.max(max, temp);
+        int count=1;
+        meeting now = arr[0];
+        for(int i=1; i<arr.length; i++){
+            if(now.end<=arr[i].start){
+                count++;
+                now = arr[i];
+                continue;
             }
         }
-        System.out.println(max);
+        
+        System.out.println(count);
+
     }
 }
