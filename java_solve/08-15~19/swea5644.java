@@ -78,7 +78,7 @@ public class swea5644 {
     }
 
     static int getMax(int x1, int y1, int x2, int y2){
-        int[][] amount = new int[2][A];//사용자의 충전 가능한 배터리 값을 넣어줌
+        int[][] amount = new int[2][A]; //사용자의 충전 가능한 배터리 값을 넣어줌
         //사용자A의 충전가능한 P값
         for(int i=0; i<A; i++){
             amount[0][i] = check(x1,y1,i);
@@ -102,17 +102,12 @@ public class swea5644 {
             }    
         }
         return max;
-
     }
 
     static int check(int x, int y, int BCnum){
         int a = Math.abs(x-list.get(BCnum).x);
         int b = Math.abs(y-list.get(BCnum).y);
         int dist = a+b;
-
         return dist<=list.get(BCnum).c ? list.get(BCnum).p : 0;
-        
-        
     }
-
 }

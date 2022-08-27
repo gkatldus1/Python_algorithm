@@ -6,7 +6,6 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Baek15683 {
-
     static class CCTV{
         int num;
         int x;
@@ -123,10 +122,8 @@ public class Baek15683 {
     public static void watch(CCTV cctv, int d) {
 		Queue<CCTV> queue = new LinkedList<>();
 		
-
 		queue.add(cctv);
 		
-
 		while(!queue.isEmpty()) {
 			int nx = queue.peek().x + dx[d];
 			int ny = queue.poll().y + dy[d];

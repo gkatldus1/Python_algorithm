@@ -1,0 +1,110 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class BJ_17135_캐슬디펜스_홍금비 {
+    static int N,M,D;
+    static int [][]map;
+    static int []  archerIndex ;
+    static int answer = 0;
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        D = Integer.parseInt(st.nextToken());
+
+        map = new int[N][M];
+        archerIndex = new int[3];
+
+        for(int r = 0 ; r <  N; r++){
+            st = new StringTokenizer(br.readLine());
+            for(int c = 0 ;c<M;c++){
+                map[r][c] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        setArcher(0,0);
+
+        System.out.println(answer);
+
+    }
+    private static void setArcher (int start,int cur){
+
+        if(cur ==3){ //궁수 3명의 위치를 정했다면.(조합)
+            //최대로 잡은 적의 개수로 정답을 구한다.
+            int [][]temp  = copyMap(map);
+         answer= Math.max(answer,castleDefense(archerIndex,temp));
+         return;
+
+        }
+
+        for(int i =  start; i <M;i++){
+            archerIndex[cur]=i;
+            setArcher(i+1,cur+1);
+        }
+    }
+    private static int castleDefense (int []archerIndex,int [][]map){
+
+        int castleR = N; // 성의 현재 행 위치  (
+        int count = 0;
+        while (castleR>0){
+            ArrayList <int []>  enemyList = new ArrayList<>(); //잡은 적의 좌표 저장
+            for(int a =0 ; a < 3; a++){ //각 궁수 마다 적을 잡는다.
+                int minDistance = Integer.MAX_VALUE;
+                int [] enemyIndex = new int[2];
+
+                for(int c = 0 ; c <M ;c++){
+                    for(int r = castleR-1; r>=0;r--){
+                        if(map[r][c]==1){//적을 만났다면
+                            int dis = Math.abs(castleR-r)+Math.abs(c-archerIndex[a]);
+
+                            if(dis<=D && minDistance>dis){//거리 안에 있고 그 거리가 최소였다면
+                                minDistance=dis; //최소거리 갱신
+                                //적의 좌표 저장
+                                enemyIndex[0]=r;
+                                enemyIndex[1]=c;
+                            }
+
+                        }
+                    }
+                }
+
+                if(minDistance!=Integer.MAX_VALUE){//죽인 적이있을 경우에만 좌표를 저장
+                    enemyList.add(enemyIndex);
+                }
+            }
+
+
+            //3명의 궁수가 적을 다 잡았다면 잡은 적의 수를 세어준다.
+
+            for(int i = 0 ; i <enemyList.size();i++){
+                int r = enemyList.get(i)[0];
+                int c = enemyList.get(i)[1];
+                if(map[r][c]==0)continue; //적이 없다면 넘어가고 (중복된 적을 처리해주기 위함)
+                //그렇지않으면 잡은 적의 개수를 세어주고 그 자리는 0으로 만들어준다.
+                count++;
+                map[r][c]=0;
+            }
+
+            castleR--;
+        }
+
+        return count;
+
+    }
+
+    private static int[][] copyMap (int[][]map){
+        int [][]temp = new int[N][M];
+
+        for(int r = 0 ; r < N ; r++){
+            for(int c = 0 ; c <M;c++){
+                temp[r][c]= map[r][c];
+            }
+        }
+        return temp;
+    }
+}

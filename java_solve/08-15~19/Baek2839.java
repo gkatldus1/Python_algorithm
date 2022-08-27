@@ -8,7 +8,7 @@ public class Baek2839 {
         int count=0;
         while(N>=0){
             if(N%5==0){ //5의 배수라면 이제껏 구한 카운트에 나눈 몫을 더하여 답을 구해줌. 
-                count = N/5+count;
+                count += N/5;
                 break;
             }
             N-=3;   //5의 배수가 아니라면 3으로 빼준뒤 5의 배수인지 다시 판별

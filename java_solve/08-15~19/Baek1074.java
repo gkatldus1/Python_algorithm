@@ -34,7 +34,7 @@ public class Baek1074 {
             ans += half*half*2;
             findZ(N-1, r%half, c%half);
         }
-        else /*if(r/half==1&&c/half==1)*/{//4사분면
+        else if(r/half==1&&c/half==1){//4사분면
             ans += half*half*3;
             findZ(N-1, r%half, c%half);
         }
