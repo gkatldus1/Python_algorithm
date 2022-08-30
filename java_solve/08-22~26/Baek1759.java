@@ -30,7 +30,6 @@ public class Baek1759 {
     static void combination(int cnt, int start, int L, int C) {
         if (cnt == L) {
             if (isValid(selected)) {
-
                 sb.append(String.valueOf(selected) + "\n");
             }
             return;

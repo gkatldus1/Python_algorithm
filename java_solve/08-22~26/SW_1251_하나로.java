@@ -57,12 +57,8 @@ public class SW_1251_하나로 {
             for (int i = 0; i < N - 1; i++) {
                 for (int j = i + 1; j < N; j++) {
                     weights.add(new line(i, j,
-                            Math.pow(Math.abs(pos[i].x - pos[j].x), 2) + Math.pow(Math.abs(pos[i].y - pos[j].y), 2))); // 모든
-                                                                                                                       // 노드들
-                                                                                                                       // 사이의
-                                                                                                                       // 간선의
-                                                                                                                       // 쌍을
-                                                                                                                       // 구하여
+                            Math.pow(Math.abs(pos[i].x - pos[j].x), 2) + Math.pow(Math.abs(pos[i].y - pos[j].y), 2)));
+                    // 모든 노드들의 간선 쌍의 경우의 수를 구해서 저장!
                 } // 리스트에 저장
             }
 

@@ -50,6 +50,7 @@ public class Baek1753 {
         // visited[start] = 0;
         PriorityQueue<Node> pq = new PriorityQueue<>();
         pq.offer(new Node(start, 0));
+        int cnt = 0;
         while (!pq.isEmpty()) {
             Node temp = pq.poll();
             int to = temp.to;
@@ -57,7 +58,10 @@ public class Baek1753 {
             if (visited[to] != Integer.MAX_VALUE)// 이미 방문한 곳이면 처음으로
                 continue;
             // 새로 방문한 노드를 추가시키고
+            cnt++;
             visited[to] = weight;
+            if (cnt == V)
+                break;
             // 그 노드와 연결된 다른 노드들과의 거리를 기존 기록과 비교해 갱신시킨다.
             for (int i = 0; i < list[to].size(); i++) {
                 int another_to = list[to].get(i).to;
