@@ -103,10 +103,7 @@ public class Baek3190 {
       snake temp2 = new snake(next_r, next_c, next_dir);
       if (snakes.contains(temp2))
         break;    //자신과 충돌하면 탈출
-      if (time == 237) {
-        System.out.println("===============");
-        System.out.println(""+next_r+next_c);
-      }
+      
       snakes.addFirst(temp2); //뱀의 머리 위치를 늘려준다.
       if (map[next_r][next_c] == 1) { //사과가 있는 위치라면 먹고 꼬리를 줄이지 않는다.
         map[next_r][next_c] = 0;
