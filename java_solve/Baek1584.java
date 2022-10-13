@@ -88,8 +88,6 @@ public class Baek1584 {
         public int compareTo(Node o) {
             return this.cost - o.cost;
         }
-
-
     }
 
 }

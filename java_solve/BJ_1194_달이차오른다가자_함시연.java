@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
-import java.util.HashSet;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
@@ -13,7 +12,7 @@ public class BJ_1194_달이차오른다가자_함시연 {
 	static class Point{
 		int r, c;
 		int key;
-		HashSet<Character> set = new HashSet<>();
+		
 		public Point(int r, int c, int key) {
 			super();
 			this.r = r;
@@ -62,7 +61,7 @@ public class BJ_1194_달이차오른다가자_함시연 {
 				int[] cur = queue.poll();
 				for(int i=0; i<4; i++) {
 					int nr = cur[0] + deltas[i][0];
-					int nc = cur[1]+ deltas[i][1];
+					int nc = cur[1] + deltas[i][1];
 					if(nr<0 || nr>=N || nc<0 || nc >= M || map[nr][nc] == '#')	continue;	//경로를 벗어나면 안돼 돌아가
 					if(map[nr][nc] == '1')	return cnt;
 					//열쇠가 없다면
@@ -73,11 +72,8 @@ public class BJ_1194_달이차오른다가자_함시연 {
 					// 방문했던 곳이면 돌아가기
 					if(visited[nr][nc][key]) continue;
 					visited[nr][nc][key] = true;
-					queue.add(new int[] {nr,nc, key});
-					
+					queue.add(new int[] {nr,nc, key});	
 				}
-				
-				
 			}
 		}
 		return -1;
